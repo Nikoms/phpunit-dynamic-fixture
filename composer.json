@@ -1,5 +1,5 @@
 {
-    "name": "Nikoms/phpunit-dynamic-fixture",
+    "name": "nikoms/phpunit-dynamic-fixture",
     "description": "Put a some dynamic setUp and tearDown to get a appropriate context in your test",
     "minimum-stability": "dev",
     "license": "MIT",
