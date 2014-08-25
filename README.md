@@ -1,4 +1,4 @@
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/cf4537d8-6357-4909-baed-2e1a0bf62adc/big.png)](https://insight.sensiolabs.com/projects/cf4537d8-6357-4909-baed-2e1a0bf62adc)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b3876f8b-864e-4bdc-8de6-0902fe5be1b4/mini.png)](https://insight.sensiolabs.com/projects/b3876f8b-864e-4bdc-8de6-0902fe5be1b4)
 [![Build Status](https://api.travis-ci.org/Nikoms/phpunit-dynamic-fixture.png)](https://api.travis-ci.org/Nikoms/phpunit-dynamic-fixture)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Nikoms/phpunit-dynamic-fixture/badges/quality-score.png)](https://scrutinizer-ci.com/g/Nikoms/phpunit-dynamic-fixture/)
 [![Code Coverage](https://scrutinizer-ci.com/g/Nikoms/phpunit-dynamic-fixture/badges/coverage.png)](https://scrutinizer-ci.com/g/Nikoms/phpunit-dynamic-fixture/)
