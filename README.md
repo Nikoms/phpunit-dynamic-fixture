@@ -8,8 +8,8 @@ DynamicFixture
 ==============
 
 Thanks to annotations, this library allows you to call dynamic/custom "setUp" methods before each one of your test.
-It eases the understanding of your test because you explicitly set which context/variable you will use in it.
-It also can speed up your tests as you only initialize what they need
+It eases the understanding of your test because you explicitly set which context/variables you will use.
+It also can speed up your tests as you only initialize what they need.
 
 Installation
 --------------
@@ -22,7 +22,7 @@ Simply add this to your `composer.json` file:
 }
 ```
 
-Then run `php composer.phar install`.
+Then run `php composer.phar install`
 
 PhpUnit configuration
 ---------------------
@@ -41,7 +41,7 @@ To activate the plugin. Add the listener to your phpunit.xml(.dist) file:
 Usage
 -----
 
-Use the annotation "@setUpContext" to call the specified method just before the test. Of course, you can add as many "setUpContext" as you want.
+Use the annotation "@setUpContext" to call the specified method(s) just before the test. Of course, you can add as many annotations as you want.
 
 ```php
 class MyTest extends PHPUnit_Framework_TestCase {
@@ -56,14 +56,21 @@ class MyTest extends PHPUnit_Framework_TestCase {
         $this->name = 'Nicolas';
     }
 
+    public function initContext()
+    {
+        //...
+    }
+
     /**
      * @setUpContext setUpName
+     * @setUpContext initContext
+     * @setUpContext ...
+     *
      */
     public function testSetUpName()
     {
         //$this->name is "Nicolas"
     }
-
 }
 ```
 
