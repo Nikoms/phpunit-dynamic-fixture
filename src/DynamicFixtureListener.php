@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Nikoms\DynamicFixture;
-
 
 use Exception;
 use PHPUnit_Framework_AssertionFailedError;
