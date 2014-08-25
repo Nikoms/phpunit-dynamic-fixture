@@ -12,6 +12,16 @@ use PHPUnit_Framework_TestSuite;
 class DynamicFixtureListener implements \PHPUnit_Framework_TestListener
 {
 
+    private $annotationName;
+
+    /**
+     * @param string $annotationName
+     */
+    public function __construct($annotationName = 'setUpContext')
+    {
+        $this->annotationName = $annotationName;
+    }
+
     public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
     {
     }
@@ -62,7 +72,7 @@ class DynamicFixtureListener implements \PHPUnit_Framework_TestListener
     private function setUpContext(\PHPUnit_Framework_TestCase $testCase)
     {
         $reflectionMethod = new \ReflectionMethod($testCase, $testCase->getName(false));
-        $this->callMethods($testCase, $this->getAnnotations($reflectionMethod, 'setUpContext'));
+        $this->callMethods($testCase, $this->getAnnotations($reflectionMethod, $this->annotationName));
     }
 
     /**
