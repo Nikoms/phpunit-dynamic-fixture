@@ -6,3 +6,74 @@
 
 DynamicFixture
 ==============
+
+Thanks to annotations, this library allows you to call dynamic/custom "setUp" methods before each one of your test.
+
+Installation
+--------------
+
+### Composer ###
+Simply add this to your `composer.json` file:
+```js
+"require": {
+    "nikoms/phpunit-dynamic-fixture": "dev-master"
+}
+```
+
+Then run `php composer.phar install`.
+
+PhpUnit configuration
+---------------------
+To activate the plugin. Add the listener to your phpunit.xml(.dist) file:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit>
+    ...
+    <listeners>
+        <listener class="Nikoms\DynamicFixture\DynamicFixtureListener" file="src/DynamicFixtureListener.php" />
+    </listeners>
+</phpunit>
+```
+
+Usage
+-----
+
+Use the annotation "@setUpContext" to call the specified method just before the test. Of course, you can add as many "setUpContext" as you want.
+
+```php
+class MyTest extends PHPUnit_Framework_TestCase {
+
+    private $name;
+
+    /**
+     * Must be public
+     */
+    public function setUpName()
+    {
+        $this->name = 'Nicolas';
+    }
+
+    /**
+     * @setUpContext setUpName
+     */
+    public function testSetUpName()
+    {
+        //$this->name is "Nicolas"
+    }
+
+}
+```
+
+Customize
+---------
+
+If you don't like the name of the annotation, you can change it by passing a new one in the constructor:
+
+```xml
+ <listener class="Nikoms\DynamicFixture\DynamicFixtureListener" file="src/DynamicFixtureListener.php">
+    <arguments>
+        <string>myCustomSetUp</string>
+    </arguments>
+</listener>
+```
