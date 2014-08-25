@@ -33,7 +33,7 @@ To activate the plugin. Add the listener to your phpunit.xml(.dist) file:
 <phpunit>
     ...
     <listeners>
-        <listener class="Nikoms\DynamicFixture\DynamicFixtureListener" file="src/DynamicFixtureListener.php" />
+        <listener class="Nikoms\DynamicFixture\DynamicFixtureListener" file="vendor/nikoms/phpunit-dynamic-fixture/src/DynamicFixtureListener.php" />
     </listeners>
 </phpunit>
 ```
@@ -73,7 +73,7 @@ Customize
 If you don't like the name of the annotation, you can change it by passing a new one in the constructor:
 
 ```xml
- <listener class="Nikoms\DynamicFixture\DynamicFixtureListener" file="src/DynamicFixtureListener.php">
+ <listener class="Nikoms\DynamicFixture\DynamicFixtureListener" file="vendor/nikoms/phpunit-dynamic-fixture/src/DynamicFixtureListener.php">
     <arguments>
         <string>myCustomSetUp</string>
     </arguments>
