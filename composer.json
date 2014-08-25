@@ -1,6 +1,6 @@
 {
     "name": "nikoms/phpunit-dynamic-fixture",
-    "description": "Put a some dynamic setUp and tearDown to get a appropriate context in your test",
+    "description": "Dynamic setUp to create an appropriate context in your tests",
     "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
