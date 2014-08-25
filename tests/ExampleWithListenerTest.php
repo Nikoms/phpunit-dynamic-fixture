@@ -1,6 +1,6 @@
 <?php
 
-class DynamicFixtureListenerTest extends PHPUnit_Framework_TestCase {
+class ExampleWithListenerTest extends PHPUnit_Framework_TestCase {
 
     private $name;
     private $firstName;
@@ -53,4 +53,3 @@ class DynamicFixtureListenerTest extends PHPUnit_Framework_TestCase {
         $this->assertNull($this->firstName);
     }
 }
- 
