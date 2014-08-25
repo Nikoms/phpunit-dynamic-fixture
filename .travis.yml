@@ -12,6 +12,10 @@ env:
 - PHPUNIT_VERSION=4.2.*
 - PHPUNIT_VERSION=4.3.*@dev
 
+cache:
+  directories:
+    - $COMPOSER_CACHE_DIR
+
 before_script:
   - composer require --prefer-source --dev phpunit/phpunit:${PHPUNIT_VERSION}
 
