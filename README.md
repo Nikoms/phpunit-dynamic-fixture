@@ -8,6 +8,8 @@ DynamicFixture
 ==============
 
 Thanks to annotations, this library allows you to call dynamic/custom "setUp" methods before each one of your test.
+It eases the understanding of your test because you explicitly set which context/variable you will use in it.
+It also can speed up your tests as you only initialize what they need
 
 Installation
 --------------
