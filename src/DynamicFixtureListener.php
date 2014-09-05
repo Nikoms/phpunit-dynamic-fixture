@@ -34,19 +34,11 @@ class DynamicFixtureListener extends \PHPUnit_Framework_BaseTestListener
      */
     private function setUpContext(\PHPUnit_Framework_TestCase $testCase)
     {
-        $reflectionMethod = new \ReflectionMethod($testCase, $testCase->getName(false));
-        $this->callMethods($testCase, $this->getAnnotations($reflectionMethod, $this->annotationName));
-    }
+        $annotations = $testCase->getAnnotations();
+        if (isset($annotations['method'][$this->annotationName])) {
+            $this->callMethods($testCase, $annotations['method'][$this->annotationName]);
+        }
 
-    /**
-     * @param \ReflectionMethod $reflectionMethod
-     * @param $tagName
-     * @return mixed
-     */
-    private function getAnnotations(\ReflectionMethod $reflectionMethod, $tagName)
-    {
-        preg_match_all("/@$tagName (.*)(\\r\\n|\\r|\\n)/U", $reflectionMethod->getDocComment(), $matches);
-        return $matches[1];
     }
 
     /**
@@ -56,7 +48,7 @@ class DynamicFixtureListener extends \PHPUnit_Framework_BaseTestListener
     private function callMethods(\PHPUnit_Framework_TestCase $testCase, array $methods)
     {
         foreach ($methods as $method) {
-            if(!method_exists($testCase, $method)){
+            if (!method_exists($testCase, $method)) {
                 continue;
             }
             $reflectionMethod = new \ReflectionMethod($testCase, $method);
