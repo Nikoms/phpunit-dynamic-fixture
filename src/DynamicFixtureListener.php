@@ -55,4 +55,4 @@ class DynamicFixtureListener extends \PHPUnit_Framework_BaseTestListener
             $reflectionMethod->invoke($testCase);
         }
     }
-} 
+}
