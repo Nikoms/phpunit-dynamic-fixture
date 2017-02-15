@@ -7,6 +7,8 @@
 DynamicFixture
 ==============
 
+**This project is dead. Please use this one instead: https://github.com/Nikoms/phpunit-arrange. You won't regret it ;) **
+
 Thanks to annotations, this library allows you to call dynamic/custom "setUp" methods before each one of your test.
 It eases the understanding of your test because you explicitly set which context/variables you will use.
 It also can speed up your tests as you only initialize what they need.
